@@ -28,13 +28,37 @@
         .led { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; }
         .btn-small { background: #334155; color: #f8fafc; border: none; border-radius: 6px; padding: 8px 12px; cursor: pointer; margin-right: 6px; margin-top: 6px; }
         input[type=text] { width: 100%; padding: 10px; background: #0f172a; border: 1px solid #334155; color: white; border-radius: 6px; margin-top: 10px; box-sizing: border-box; }
+        .intake { max-width: 760px; margin: 0 auto; }
+        .intake textarea { width: 100%; min-height: 90px; padding: 12px; box-sizing: border-box; border: 1px solid #475569; border-radius: 8px; font: inherit; }
+        .intake-actions, .pictogram-menu { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 12px 0; }
+        .pictogram-menu button { min-width: 110px; min-height: 64px; background: #1e293b; color: #f8fafc; border: 1px solid #475569; border-radius: 8px; cursor: pointer; }
+        .intake button:focus-visible { outline: 3px solid #fbbf24; outline-offset: 2px; }
     </style>
 </head>
 <body>
     <h1>HaqSetu Agentic Node</h1>
     <p class="tagline">The village speaks. The right desk is named. The plan fits one visit. The clock is public. The machine never denies.</p>
 
-    <button id="btn-speak" class="btn-mic">Speak to HaqSetu</button>
+    <div class="intake">
+        <label for="intake-text">Type your concern</label>
+        <textarea id="intake-text" maxlength="2000" placeholder="For example: I have not received my pension"></textarea>
+        <div class="intake-actions">
+            <button id="btn-submit-intake" class="btn-small">Submit</button>
+            <button id="btn-speak" class="btn-mic">Browser speech (needs internet)</button>
+        </div>
+        <div class="pictogram-menu" aria-label="Choose a concern">
+            <button type="button" data-intake-text="pension">👵 Pension</button>
+            <button type="button" data-intake-text="ration">🌾 Ration</button>
+            <button type="button" data-intake-text="health card">🏥 Health card</button>
+            <button type="button" data-intake-text="PM-KISAN">🌱 PM-KISAN</button>
+            <button type="button" data-intake-text="wage work">🧱 Wage work</button>
+            <button type="button" data-intake-text="crop loss">🌧️ Crop loss</button>
+            <button type="button" data-intake-text="water">💧 Water</button>
+            <button type="button" data-intake-text="road or lane">🛣️ Road / lane</button>
+            <button type="button" data-intake-text="complaint about an official">🗣️ Official complaint</button>
+            <button type="button" data-intake-text="other concern">❓ Other</button>
+        </div>
+    </div>
     <div id="voice-status">Click to begin intake...</div>
 
     <div id="brain-scan" class="brain-scan">

@@ -81,7 +81,7 @@ iframe{flex:1;border:0;width:100%;background:#000;}
 <div id='boot'><div class='spin'></div><div id='bootmsg' style='color:#94a3b8;font-size:13px'>starting backends…</div></div>
 <header><b>🌉 HaqSetu Console</b><div id='tabs' style='display:flex;gap:10px;flex-wrap:wrap'></div>
 <button class='tab' onclick='location.reload()' style='margin-left:auto'>↻ reload</button></header>
-<iframe id='fr' src='about:blank'></iframe>
+<iframe id='fr' src='about:blank' allow='microphone'></iframe>
 <script>
 const MODS=__MODS__;
 let cur=null;
